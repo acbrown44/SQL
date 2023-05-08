@@ -1,0 +1,14 @@
+SELECT artist_name, popularity
+FROM BIT_DB.Spotifydata
+ORDER BY popularity desc
+LIMIT 10;
+
+SELECT DISTINCT artist_name, duration_ms
+FROM BIT_DB.Spotifydata
+ORDER BY duration_ms
+LIMIT 1;
+
+SELECT DISTINCT artist_name, track_name, danceability
+FROM BIT_DB.Spotifydata
+ORDER BY danceability desc
+LIMIT 3;
