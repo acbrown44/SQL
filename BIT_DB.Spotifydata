@@ -12,3 +12,13 @@ SELECT DISTINCT artist_name, track_name, danceability
 FROM BIT_DB.Spotifydata
 ORDER BY danceability desc
 LIMIT 3;
+
+ITH Popularity_table_CTE AS  
+(SELECT S.artist_name, 
+AVG(S.popularity) as Popularity_avg
+FROM Spotifydata S
+GROUP BY S.artist_name)
+
+SELECT artist_name, popularity_avg, 'Top Star' as tag 
+from Popularity_table_CTE
+WHERE popularity_avg > 90;
